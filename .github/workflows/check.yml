@@ -1,0 +1,23 @@
+name: 'Modrinth Modpack Update Checker Test'
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Every hour
+  workflow_dispatch: # Allow running the workflow manually
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Check Modrinth Modpack updates'
+        uses: Gunivers/modrinth-modpack-update-checker@v1
+        id: check
+        with:
+          modrinth-modpack-slug: 'map-making-modpack'
+
+      - name: Print if the modpack can be upgraded
+        if: ${{ steps.check.outputs.can-upgrade == 'true' }}
+        run: "echo \"The modpack can be upgraded to the new Minecraft version\""
+      - name: Print if the modpack cannot be upgraded
+        if: ${{ steps.check.outputs.can-upgrade == 'false' }}
+        run: "echo \"The modpack cannot be upgraded to the new Minecraft version\""
