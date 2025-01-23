@@ -1,6 +1,7 @@
 # Modrinth's Modpack Update Checker
 
 A GitHub action that checks if a modpack can be upgraded to a new Minecraft version.
+This action may be used with [Modrinth's Modpack Updater Printer](https://github.com/Gunivers/modrinth-modpack-updater-printer) to automatically create and update an issue to track modpack's mods compatibility with the next Minecraft version.
 
 ## Usage
 
