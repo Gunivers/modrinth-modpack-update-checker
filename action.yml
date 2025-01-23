@@ -36,9 +36,9 @@ outputs:
 runs:
     using: 'docker'
     image: 'Dockerfile'
-    args:
-      - ${{ inputs.modrinth-modpack-slug }}
-      - ${{ inputs.modrinth-project-getter-url }}
-      - ${{ inputs.modrinth-versions-getter-url }}
-      - ${{ inputs.modrinth-version-getter-url }}
-      - ${{ inputs.skipped-versions }}
+    # args:
+    #   - ${{ inputs.modrinth-modpack-slug }}
+    #   - ${{ inputs.modrinth-project-getter-url }}
+    #   - ${{ inputs.modrinth-versions-getter-url }}
+    #   - ${{ inputs.modrinth-version-getter-url }}
+    #   - ${{ inputs.skipped-versions }}
