@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Check Modrinth Modpack updates'
-        uses: Gunivers/modrinth-modpack-update-checker@v1
+        uses: Gunivers/modrinth-modpack-update-checker@v1.1.0
         id: check
         with:
           modrinth-modpack-slug: 'example-modpack'
@@ -29,23 +29,23 @@ jobs:
 
 ## Inputs
 
-| Input | Description | Required | Default |
-|-------|-------------|----------|---------|
-| `modrinth-modpack-slug` | The slug of the modpack to check | true | |
-| `modrinth-project-getter-url` | The API endpoint to get project information | false | `https://api.modrinth.com/v2/project/{}` |
-| `modrinth-versions-getter-url` | The API endpoint to get versions of a modpack | false | `https://api.modrinth.com/v2/project/{}/version` |
-| `modrinth-version-getter-url` | The API endpoint to get version information | false | `https://api.modrinth.com/v2/version/{}` |
-| `skipped-versions` | Array of Minecraft version to skip in tests, separated by commas, example: `1.21.1, 1.21.2` | false | |
+| Input | Description | Required | Default | Supported since |
+|-------|-------------|----------|---------|----------------|
+| `modrinth-modpack-slug` | The slug of the modpack to check | true | | v1.0.0 |
+| `modrinth-project-getter-url` | The API endpoint to get project information | false | `https://api.modrinth.com/v2/project/{}` | v1.0.0 |
+| `modrinth-versions-getter-url` | The API endpoint to get versions of a modpack | false | `https://api.modrinth.com/v2/project/{}/version` | v1.0.0 |
+| `modrinth-version-getter-url` | The API endpoint to get version information | false | `https://api.modrinth.com/v2/version/{}` | v1.0.0 |
+| `skipped-versions` | Array of Minecraft version to skip in tests, separated by commas, example: `1.21.1, 1.21.2` | false | | v1.0.0 |
 
 ## Outputs
 
 <!-- A table of outputs with their description -->
 
-| Output | Description |
-|--------|-------------|
-| `current-version` | The current version of the modpack |
-| `searched-version` | The version of Minecraft that was checked |
-| `supported` | The mods that are supported on the searched version, separated by commas |
-| `unsupported` | The mods that are not supported on the searched version, separated by commas |
-| `can-upgrade` | Whether the modpack can be upgraded to the searched version |
-
+| Output | Description | Supported since |
+|--------|-------------|----------------|
+| `current-version` | The current version of the modpack | v1.0.0 |
+| `is-up-to-date` | Whether the modpack is up to date | v1.1.0 |
+| `searched-version` | The version of Minecraft that was checked | v1.0.0 |
+| `supported` | The mods that are supported on the searched version, separated by commas | v1.0.0 |
+| `unsupported` | The mods that are not supported on the searched version, separated by commas | v1.0.0 |
+| `can-upgrade` | Whether the modpack can be upgraded to the searched version | v1.0.0 |

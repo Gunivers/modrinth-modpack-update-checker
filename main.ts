@@ -72,9 +72,12 @@ async function main() {
                 core.setOutput("supported", supported.join(","))
                 core.setOutput("unsupported", unsupported.join(","))
                 core.setOutput("can-upgrade", unsupported.length === 0 ? "true" : "false")
+                core.setOutput("is-up-to-date", "false")
             } else {
                 core.info("No new Minecraft version found")
             }
+        } else {
+            core.setOutput("is-up-to-date", "true")
         }
     }
 }

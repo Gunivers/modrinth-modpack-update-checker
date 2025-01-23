@@ -1,6 +1,6 @@
 {
   "name": "modrinth-modpack-updater",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A tool to check and update Modrinth modpacks for new Minecraft versions.",
   "main": "main.ts",
   "scripts": {

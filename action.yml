@@ -23,6 +23,8 @@ inputs:
 outputs:
   current-version:
     description: 'The current version of the modpack'
+  is-up-to-date:
+    description: 'Whether the modpack is up to date'
   searched-version:
     description: 'The version of Minecraft that was checked'
   supported:
