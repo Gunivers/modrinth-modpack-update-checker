@@ -9,7 +9,7 @@ name: 'Modrinth Modpack Update Checker'
 
 on:
   schedule:
-    - cron: '*/60 * * * *' # Every hours
+    - cron: '0 * * * *' # Every hours
   workflow_dispatch: # Allow running the workflow manually
 
 jobs:
