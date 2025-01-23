@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Check Modrinth Modpack updates'
-        uses: Gunivers/modrinth-modpack-update-checker@v1.1.0
+        uses: Gunivers/modrinth-modpack-update-checker@dev
         id: check
         with:
           modrinth-modpack-slug: 'map-making-modpack'
