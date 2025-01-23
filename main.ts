@@ -67,6 +67,12 @@ async function main() {
                         }
                     }
                 }
+
+                core.debug(latestModpackVersionMetadata.gameVersion)
+                core.debug(nextMinecraftVersion)
+                core.debug(JSON.stringify(supported))
+                core.debug(JSON.stringify(unsupported))
+                core.debug(unsupported.length === 0 ? "true" : "false")
                 core.setOutput("current-version", latestModpackVersionMetadata.gameVersion)
                 core.setOutput("searched-version", nextMinecraftVersion)
                 core.setOutput("supported", supported.join(","))
