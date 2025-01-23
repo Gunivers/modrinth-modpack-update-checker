@@ -20,7 +20,9 @@ jobs:
         run: "echo \"The modpack can be upgraded to the new Minecraft version\""
       - name: Print if the modpack cannot be upgraded
         if: ${{ steps.check.outputs.can-upgrade == 'false' }}
-        run: "echo \"The modpack cannot be upgraded to the new Minecraft version\""
+        run: |
+          echo "The modpack cannot be upgraded to the new Minecraft version"
+          echo ${{ steps.check.outputs.unsupported }}
       - name: Print if the modpack is up to date
         if: ${{ steps.check.outputs.is-up-to-date == 'true' }}
         run: "echo \"The modpack is up to date\""
