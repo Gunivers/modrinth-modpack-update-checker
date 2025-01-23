@@ -10,17 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Check Modrinth Modpack updates'
-        uses: Gunivers/modrinth-modpack-update-checker@v1.1.0
+        uses: theogiraudet/modrinth-modpack-update-checker@main
         id: check
         with:
-          modrinth-modpack-slug: 'map-making-modpack'
+          modrinth-modpack-slug: 'exceptionallyoptimized'
 
       - name: Print if the modpack can be upgraded
         if: ${{ steps.check.outputs.can-upgrade == 'true' }}
         run: "echo \"The modpack can be upgraded to the new Minecraft version\""
       - name: Print if the modpack cannot be upgraded
         if: ${{ steps.check.outputs.can-upgrade == 'false' }}
-        run: "echo \"The modpack cannot be upgraded to the new Minecraft version\""
+        run: |
+          echo "The modpack cannot be upgraded to the new Minecraft version"
+          echo Unsupported mods: ${{ steps.check.outputs.unsupported }}
       - name: Print if the modpack is up to date
         if: ${{ steps.check.outputs.is-up-to-date == 'true' }}
         run: "echo \"The modpack is up to date\""

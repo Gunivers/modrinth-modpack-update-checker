@@ -1,0 +1,9 @@
+{
+  "tasks": {
+    "dev": "deno run --watch main.ts"
+  },
+  "imports": {
+    "@actions/cache": "npm:@actions/cache@^4.0.0",
+    "@actions/core": "npm:@actions/core@^1.11.1"
+  }
+}
