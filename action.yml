@@ -34,5 +34,5 @@ outputs:
   can-upgrade:
     description: 'Whether the modpack can be upgraded to the searched version'
 runs:
-  using: 'node20'
-  main: 'dist/main.js'
+  using: 'docker'
+  image: 'Dockerfile'

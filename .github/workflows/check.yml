@@ -13,7 +13,7 @@ jobs:
         uses: Gunivers/modrinth-modpack-update-checker@v1.1.0
         id: check
         with:
-          modrinth-modpack-slug: 'map-making-modpack'
+          modrinth-modpack-slug: 'exceptionallyoptimized'
 
       - name: Print if the modpack can be upgraded
         if: ${{ steps.check.outputs.can-upgrade == 'true' }}
