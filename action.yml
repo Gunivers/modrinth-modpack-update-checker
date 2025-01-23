@@ -1,44 +1,44 @@
 name: 'Modrinth Modpack Update Checker'
 description: 'Checks if all the mods of a Modrinth Modpack are available on the newest Minecraft versions'
 inputs:
-  modrinth-modpack-slug:
-    description: 'The Modrinth slug of the modpack to watch'
-    required: true
-  modrinth-project-getter-url:
-    description: 'The API endpoint to get project information'
-    required: false
-    default: "https://api.modrinth.com/v2/project/{}"
-  modrinth-versions-getter-url:
-    description: 'The API endpoint to get versions of a modpack'
-    required: false
-    default: "https://api.modrinth.com/v2/project/{}/version"
-  modrinth-version-getter-url:
-    description: 'The API endpoint to get version information'
-    required: false
-    default: "https://api.modrinth.com/v2/version/{}"
-  skipped-versions:
-    description: 'Array of Minecraft version to skip in tests'
-    required: false
-    default: ""
+    modrinth-modpack-slug:
+      description: 'The Modrinth slug of the modpack to watch'
+      required: true
+    modrinth-project-getter-url:
+      description: 'The API endpoint to get project information'
+      required: false
+      default: "https://api.modrinth.com/v2/project/{}"
+    modrinth-versions-getter-url:
+      description: 'The API endpoint to get versions of a modpack'
+      required: false
+      default: "https://api.modrinth.com/v2/project/{}/version"
+    modrinth-version-getter-url:
+      description: 'The API endpoint to get version information'
+      required: false
+      default: "https://api.modrinth.com/v2/version/{}"
+    skipped-versions:
+      description: 'Array of Minecraft version to skip in tests'
+      required: false
+      default: ""
 outputs:
-  current-version:
-    description: 'The current version of the modpack'
-  is-up-to-date:
-    description: 'Whether the modpack is up to date'
-  searched-version:
-    description: 'The version of Minecraft that was checked'
-  supported:
-    description: 'The mods that are supported on the searched version'
-  unsupported:
-    description: 'The mods that are not supported on the searched version'
-  can-upgrade:
-    description: 'Whether the modpack can be upgraded to the searched version'
+    current-version:
+      description: 'The current version of the modpack'
+    is-up-to-date:
+      description: 'Whether the modpack is up to date'
+    searched-version:
+      description: 'The version of Minecraft that was checked'
+    supported:
+      description: 'The mods that are supported on the searched version'
+    unsupported:
+      description: 'The mods that are not supported on the searched version'
+    can-upgrade:
+      description: 'Whether the modpack can be upgraded to the searched version'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.modrinth-modpack-slug }}
-    - ${{ inputs.modrinth-project-getter-url }}
-    - ${{ inputs.modrinth-versions-getter-url }}
-    - ${{ inputs.modrinth-version-getter-url }}
-    - ${{ inputs.skipped-versions }}
+    using: 'docker'
+    image: 'Dockerfile'
+    args:
+      - ${{ inputs.modrinth-modpack-slug }}
+      - ${{ inputs.modrinth-project-getter-url }}
+      - ${{ inputs.modrinth-versions-getter-url }}
+      - ${{ inputs.modrinth-version-getter-url }}
+      - ${{ inputs.skipped-versions }}
