@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Check Modrinth Modpack updates'
-        uses: Gunivers/modrinth-modpack-update-checker@v1.1.0
+        uses: theogiraudet/modrinth-modpack-update-checker@main
         id: check
         with:
-          modrinth-modpack-slug: 'map-making-modpack'
+          modrinth-modpack-slug: 'exceptionallyoptimized'
 
       - name: Print if the modpack can be upgraded
         if: ${{ steps.check.outputs.can-upgrade == 'true' }}
